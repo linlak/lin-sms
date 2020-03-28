@@ -1,0 +1,133 @@
+{
+	"company": {
+		"name": "LinSMS"
+	},
+	"forms": {
+		"buttons": {
+			"cancel": "annuleren",
+			"confirm": "Bevestigen",
+			"finish": "",
+			"initiate": "Initiëren",
+			"login": "log in",
+			"ok": "OK",
+			"register": "REGISTREREN",
+			"reset": "Reset",
+			"send": "Sturen"
+		},
+		"placeholders": {
+			"auth_user": "Gebruikersnaam, telefoon of e-mail",
+			"email": "Vul email adres in",
+			"password": "Voer wachtwoord in",
+			"password_confirm": "herhaal wachtwoord",
+			"phone": "Voer telefoonnummer in",
+			"username": "Vul je gebruikersnaam in"
+		}
+	},
+	"general": {
+		"bal": "balans",
+		"coverage": {
+			"detail": "We bieden momenteel bulksms-diensten aan alleen Oegandese netwerken en onze dekking omvat",
+			"networks": {
+				"africell": "Africel",
+				"airtel": "Airtel",
+				"k2": "K2 Telecom",
+				"mtn": "MTN Oeganda",
+				"smart": "Smart Telecom",
+				"smile": "Glimlach",
+				"utl": "Uganda Telecom",
+				"vodafone": "Vodafone"
+			},
+			"title": "Onze sms-dekking"
+		},
+		"cur_quote": "Onze primaire klanten komen uit Oeganda, vandaar dat onze prijzen in de officiële valuta van dit land zijn",
+		"greeting": "Hallo {{name}}",
+		"or": "Of",
+		"simply": "gewoon"
+	},
+	"nav": {
+		"about": "Over Ons",
+		"administrator": "beheerder",
+		"all": "Allemaal",
+		"blog": "blog",
+		"console": "Troosten",
+		"contact": "Neem contact met ons op",
+		"dashboard": "Dashboard",
+		"dating": "dating",
+		"developers": "Ontwikkelaars",
+		"events": "Evenementen",
+		"forgot": "Ik ben wachtwoord vergeten",
+		"home": "Huis",
+		"initpay": "Betaling starten",
+		"inspire": "Inspiratie",
+		"jobs": "Jobs",
+		"login": "log in",
+		"logout": "Uitloggen",
+		"manage": "Beheren",
+		"me2u": "Me2U",
+		"myaccount": "Mijn rekening",
+		"mypayments": "Mijn betalingen",
+		"news": "nieuwe",
+		"pay_mtds": "Betaalmethodes",
+		"pending_sms": "In afwachting van sms",
+		"phonebook": "Telefoonboek",
+		"pricing": "pricing",
+		"privacy": "Privacy",
+		"quotes": "Citaten",
+		"recent": "recent",
+		"register": "REGISTREREN",
+		"send_sms": "Verstuur sms",
+		"sent_sms": "SMS verzonden",
+		"services": "Onze diensten",
+		"sms": "SMS",
+		"toggle": "Schakelen tussen navigatie",
+		"tutorials": "tutorials",
+		"upcoming": "Aankomende"
+	},
+	"pages": {
+		"about": {
+			"features": {
+				"title": ""
+			},
+			"mission": {
+				"detail": "Ons primaire doel is om onze gebruikers een gebruiksvriendelijke gebruikersinterface en betrouwbare services te bieden.",
+				"title": "Onze missie"
+			},
+			"story": {
+				"title": ""
+			},
+			"vision": {
+				"detail": "{{company}} visie is om de grootste aanbieder van bulk-sms in Oeganda te zijn",
+				"title": "Onze visie"
+			}
+		},
+		"home": {
+			"action": {
+				"a": "om te genieten van een verscheidenheid aan diensten en producten die we aanbieden bij"
+			},
+			"guarantee": "Bij {{company}} garanderen we dat onze SMS UI gemakkelijk te gebruiken en snel is met geavanceerde functies zoals het direct toevoegen van ontvangers, d.w.z. Hiermee kunt u tekst- of CSV-bestanden uploaden die aantallen ontvangers bevatten.",
+			"intro": " Met{{company}} kunnen onze klanten bulk-sms'en naar hun vaste klant (en) sturen om hun producten te promoten, speciale meldingen over een aanbieding of merkrelease te verzenden.",
+			"intro1": "U kunt bulk-sms rechtstreeks vanaf uw pc met internet verzenden met behulp van uw {{company}} gebruikersaccount door u aan te melden of te registreren voor een account op onze website.",
+			"intro2": "We bieden ook een scala aan producten en diensten zoals,",
+			"welocome": "Welkom bij {{company}}"
+		}
+	},
+	"services": {
+		"home": {
+			"business": "Zakelijk adverteren",
+			"carrer": "Loopbaanontwikkeling",
+			"jobs": "Vacatures adverteren",
+			"skills": "Vaardigheden adverteren",
+			"sms": "Bulk SMS"
+		},
+		"sms": {
+			"birthday": "Verjaardagsuitnodiging",
+			"funerals": "Begrafenissen",
+			"gatherings": "Massa-bijeenkomsten",
+			"introduction": "Introductiemelding",
+			"meeting": "Vergaderingsmelding",
+			"software": "Onshell en Offshell software",
+			"special": "Speciale seizoenen groeten",
+			"wedding": "Huwelijksuitnodiging"
+		}
+	}
+}

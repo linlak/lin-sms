@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-12">
+        <h3 class="text-center my-3">Buy SMS</h3>
+        <app-currency-quote></app-currency-quote>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 col-sm-5 order-sm-last">
+        <app-price-list [smsPriceList]="smsPriceList"></app-price-list>
+    </div>
+    <div class="col-12 col-sm-7 order-sm-first">
+        <p class="text-center">This payment must be made within <b>24</b> Hours from <b>TIME</b> of Initiation.</p>
+
+        <p class="text-center"><span class="h3">Here Already?</span> &nbsp; <a class="btn btn-success btn-sm" [routerLink]="'/sms/pay'">Click Here</a> </p>
+        <app-smsbuy-form></app-smsbuy-form>
+    </div>
+</div>

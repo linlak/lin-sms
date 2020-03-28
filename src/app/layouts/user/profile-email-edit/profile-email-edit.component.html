@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-sm-6 mx-auto">
+        <form class="form mt-5 shadow-sm p-3 bg-info rounded" role="form" (submit)="saveChanges()">
+            <h3 class="text-center mb-3 card-title ">Edit Email</h3>
+            <div class="form-group">
+                <input type="email" name="email" class="form-control" placeholder="Email" [(ngModel)]="user.email" [ngClass]="{'is-invalid': errs.email}">
+                <span class="invalid-feedback" role="alert" *ngIf="errs.email">{{errs.email[0]}}</span>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="user.password" [ngClass]="{'is-invalid': errs.password}">
+                <span class="invalid-feedback" role="alert" *ngIf="errs.password">{{errs.password[0]}}</span>
+            </div>
+            <div class="form-group clearfix mt-3">
+                <input type="submit" name="submit" [disabled]="isSubmiting" class="float-right btn btn-lg btn-primary" value="Save Changes">
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <div class="row bg-light">
+        <div class="col-12">
+            <header>
+                <div class="row">
+                    <div class="col-12 navmain">
+                        <app-navbar></app-navbar>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <div class="row">
+                    <div class="col-12">
+                        <input type="checkbox" id="navtoggler" [(ngModel)]="showSide">
+                        <span id="navtogglerlabel" class="bg-warning" (click)="toggleSide()">
+              <i [class]="showSide?'fa fa-angle-left':'fa fa-angle-right'">
+              </i>
+            </span>
+                        <div class="side-nav bg-secondary border-top border-light" [ngClass]="{'show-side': showSide}">
+                            <app-sidenav></app-sidenav>
+
+                        </div>
+                        <div id="mypage">
+                            <router-outlet></router-outlet>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer>
+                <!-- <app-footer></app-footer> -->
+            </footer>
+            <app-is-loading></app-is-loading>
+            <app-scrolltop></app-scrolltop>
+            <div class="m-overlay" (click)="clearNav()" [ngClass]="{'d-none': !navOpened}"></div>
+        </div>
+        <app-toasts aria-live="polite" aria-atomic="true"></app-toasts>
+        <app-alerts></app-alerts>
+    </div>
+</div>

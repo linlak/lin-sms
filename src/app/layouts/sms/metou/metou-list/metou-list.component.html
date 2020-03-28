@@ -1,0 +1,22 @@
+<div id="ListDiv" [hidden]="!received.length">
+    <ul>
+        <li class="clearfix" *ngFor="let rec of received">
+            <p>
+                <b>From: </b>{{rec.sender}} &nbsp;&nbsp;
+                <b>SMS: </b>{{rec.voucher_count}} &nbsp;&nbsp;
+                <b>Code: </b>{{rec.voucher_code}} &nbsp;&nbsp;
+                <b>Sent: </b>{{rec.init_date}} &nbsp;&nbsp;
+                <b>Received: </b>{{rec.date_used}} &nbsp;&nbsp;
+                <b>Added To: </b>&nbsp;&nbsp;&nbsp; {{rec.to_ref}}
+
+            </p>
+        </li>
+    </ul>
+</div>
+<div class="row" [hidden]="received.length">
+    <div class="col-12 text-center mt-sm-4">
+        <div class="well well-sm">
+            <strong>No records found!!</strong>
+        </div>
+    </div>
+</div>

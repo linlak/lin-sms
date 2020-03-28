@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="thead-dark">
+                    <th>Full Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Status</th>
+                    <th>Registered</th>
+                    <th>Last Seen</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users">
+                        <td><a [routerLink]="['../manage', user.id]" class="card-link">{{user.full_name}}</a></td>
+                        <td>{{user.username}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.phone}}</td>
+                        <td>
+                            <span class="text-success" *ngIf="user.status=='1'">Verified</span>
+                            <span class="text-warning" *ngIf="user.status=='0'">Pending</span>
+                            <span class="text-danger" *ngIf="user.status=='2'">Suspended</span>
+                        </td>
+                        <td>{{user.reg_date}}</td>
+                        <td>{{user.last_seen}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,133 @@
+{
+	"company": {
+		"name": "LinSMS"
+	},
+	"forms": {
+		"buttons": {
+			"cancel": "annuler",
+			"confirm": "Confirmer",
+			"finish": "",
+			"initiate": "Lancer",
+			"login": "S'identifier",
+			"ok": "D'accord",
+			"register": "registre",
+			"reset": "Réinitialiser",
+			"send": "Envoyer"
+		},
+		"placeholders": {
+			"auth_user": "Nom d'utilisateur, téléphone ou e-mail",
+			"email": "entrer l'adresse e-mail",
+			"password": "Entrer le mot de passe",
+			"password_confirm": "Répéter le mot de passe",
+			"phone": "Entrez le numéro de téléphone",
+			"username": "Saisissez votre nom d'utilisateur"
+		}
+	},
+	"general": {
+		"bal": "Équilibre",
+		"coverage": {
+			"detail": "Nous proposons actuellement des services en vrac uniquement aux réseaux ougandais et notre couverture comprend",
+			"networks": {
+				"africell": "Africel",
+				"airtel": "Airtel",
+				"k2": "K2 Telecom",
+				"mtn": "MTN Ouganda",
+				"smart": "Smart Telecom",
+				"smile": "Sourire",
+				"utl": "Uganda Telecom",
+				"vodafone": "Vodafone"
+			},
+			"title": "Notre couverture SMS"
+		},
+		"cur_quote": "Nos principaux clients sont de l'Ouganda, donc nos prix sont dans la monnaie officielle de ce pays",
+		"greeting": "Salut {{name}}",
+		"or": "Ou",
+		"simply": "Simplement"
+	},
+	"nav": {
+		"about": "À propos de nous",
+		"administrator": "Administrateur",
+		"all": "Tout",
+		"blog": "Blog",
+		"console": "Console",
+		"contact": "Contactez nous",
+		"dashboard": "Tableau de bord",
+		"dating": "Sortir ensemble",
+		"developers": "DÉVELOPPEURS",
+		"events": "Événements",
+		"forgot": "J'ai oublié le mot de passe",
+		"home": "Accueil",
+		"initpay": "Lancer le paiement",
+		"inspire": "Inspiration",
+		"jobs": "Emplois",
+		"login": "S'identifier",
+		"logout": "Connectez - Out",
+		"manage": "Gérer",
+		"me2u": "Me2U",
+		"myaccount": "Mon compte",
+		"mypayments": "Mes paiements",
+		"news": "Nouveau",
+		"pay_mtds": "Méthodes de payement",
+		"pending_sms": "SMS en attente",
+		"phonebook": "Annuaire",
+		"pricing": "Prix",
+		"privacy": "Intimité",
+		"quotes": "Citations",
+		"recent": "Récent",
+		"register": "registre",
+		"send_sms": "Envoyer un SMS",
+		"sent_sms": "SMS envoyés",
+		"services": "Nos services",
+		"sms": "SMS",
+		"toggle": "Basculer la navigation",
+		"tutorials": "Tutoriels",
+		"upcoming": "Prochain"
+	},
+	"pages": {
+		"about": {
+			"features": {
+				"title": ""
+			},
+			"mission": {
+				"detail": "Notre objectif principal est de fournir à nos utilisateurs une interface utilisateur facile à utiliser et des services fiables.",
+				"title": "Notre mission"
+			},
+			"story": {
+				"title": ""
+			},
+			"vision": {
+				"detail": "{{company}} la vision est d'être le premier fournisseur de SMS en vrac en Ouganda",
+				"title": "Notre Vision"
+			}
+		},
+		"home": {
+			"action": {
+				"a": "pour profiter d'une variété de services et de produits que nous offrons à"
+			},
+			"guarantee": "Chez {{company}} , nous garantissons que notre interface utilisateur SMS est facile à utiliser et rapide avec des fonctionnalités avancées telles que l'ajout de destinataires à la volée, c'est-à-dire qu'elle vous permet de télécharger des fichiers texte ou CSV contenant le nombre de destinataires.",
+			"intro": "{{company}} permet à nos clients d'envoyer des SMS en masse à leurs clients fréquents, de promouvoir leurs produits, d'envoyer des notifications spéciales sur une offre ou une sortie de marque.",
+			"intro1": "Vous pouvez envoyer des SMS en masse directement à partir de votre PC compatible Internet à l'aide de votre compte utilisateur {{company}} , simplement en vous connectant ou en vous enregistrant pour un compte sur notre site Web.",
+			"intro2": "Nous proposons également une gamme de produits et services tels que,",
+			"welocome": "Bienvenue à {{company}}"
+		}
+	},
+	"services": {
+		"home": {
+			"business": "Publicité commerciale",
+			"carrer": "Développement de carrière",
+			"jobs": "Publicité d'emploi",
+			"skills": "Publicité de compétences",
+			"sms": "SMS en masse"
+		},
+		"sms": {
+			"birthday": "Invitation d'anniversaire",
+			"funerals": "Funérailles",
+			"gatherings": "Rassemblements de masse",
+			"introduction": "Notification d'introduction",
+			"meeting": "Notification de réunion",
+			"software": "Logiciels Onshell et Offshell",
+			"special": "Salutations des saisons spéciales",
+			"wedding": "Invitation de mariage"
+		}
+	}
+}

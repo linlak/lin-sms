@@ -1,0 +1,24 @@
+<form class="" role="form" (submit)="saveChanges()">
+    <h3 class="text-center mb-3 card-title ">Edit Profile</h3>
+    <div class="form-group">
+        <input type="text" name="fullname" class="form-control" placeholder="Full name" [(ngModel)]="accUser.fullname">
+        <span class="invalid-feedback" role="alert" *ngIf="errs.fullname">{{errs.fullname[0]}}</span>
+    </div>
+    <div class="form-group">
+        <label>Gender</label>
+        <div>
+            <label><input type="radio" name="gender" class="" [(ngModel)]="accUser.gender" value="male">
+        Male</label>
+            <label><input type="radio" name="gender" class="" [(ngModel)]="accUser.gender" value="female">
+        Female</label>
+        </div>
+        <span class="invalid-feedback" role="alert" *ngIf="errs.gender">{{errs.gender[0]}}</span>
+    </div>
+    <div class="form-group">
+        <input type="text" name="country" class="form-control" placeholder="Country" [(ngModel)]="accUser.country">
+        <span class="invalid-feedback" role="alert" *ngIf="errs.country">{{errs.country[0]}}</span>
+    </div>
+    <div class="form-group clearfix mt-3">
+        <input type="submit" name="submit" [disabled]="isSubmiting" class="float-right btn btn-lg btn-primary" value="Save Changes">
+    </div>
+</form>

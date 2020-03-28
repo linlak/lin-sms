@@ -1,0 +1,29 @@
+<form class="form p-3 " autoComplete="off" role="form" method="POST" id="buyform" ng-submit="buynow()">
+    <div class="form-group">
+        <label class="control-label">Enter Number of SMS</label> &nbsp;&nbsp;&nbsp;&nbsp;
+        <span id="smsPrice">UShs: {{pricepreview|customCurrency:'/=':false}}</span>
+        <div class="">
+            <div class="input-group">
+                <input type="text" class="form-control" name="sms_count" ng-model="pay.sms_count" id="sms_count" ng-class="{'is-invalid':errs.sms_count}" ng-change="calPreview()" ng-blur="calPreview(1)" placeholder="Enter SMS here...." />
+                <span class="input-group-addon">SMS</span>
+            </div>
+            <p class="help-block">The initial Amount is {{smsValues.minp*smsValues.minv |customCurrency:'/=':false}}</p>
+            <span class="text-danger" id="sms_countErr" *ngIf="errs.sms_count">{{errs.sms_count[0]}}</span>
+        </div>
+    </div>
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-control" name="pay_now" [(ngModel)]="pay.pay_now" id="pay_now" />
+        <label for="pay_now" class="form-check-label">Pay Now</label>
+    </div>
+    <div class="form-group" [hidden]="!pay.pay_now">
+        <div class="">
+            <input type="tel" class="form-control" name="p_phone" [(ngModel)]="pay.p_phone" id="p_phone" [ngClass]="{'is-invalid':errs.p_phone}" placeholder="Enter number to be charged" />
+            <span class="text-danger" *ngIf="errs.p_phone">{{errs.p_phone[0]}}</span>
+        </div>
+    </div>
+    <div class="form-group clearfix">
+        <div class="">
+            <input type="submit" [disabled]="isSubmiting" name="buy" id="buy" class="btn btn-success btn-sm float-right" value="Initiate" />
+        </div>
+    </div>
+</form>

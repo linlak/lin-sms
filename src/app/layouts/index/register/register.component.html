@@ -1,0 +1,79 @@
+<div class="row">
+    <div class="col-10 col-sm-6 offset-1 offset-sm-3 p-3">
+        <form class="form shadow-lg bg-info p-3 mt-5 rounded" novalidate (submit)="register()">
+            <h3 class="text-center my-3">Register &nbsp;<span share-me share-title="Register | LinSMS" share-link="https://lin-sms.com/register.html" share-message="Register with LinSMS to start sending bulk SMS at friendly prices."></span></h3>
+
+            <a href="" class="btn btn-block btn-primary my-2" fb-login>
+                <span class="fa fa-facebook-square"></span> Continue with Facebook
+            </a>
+            <p class="text-center strong">OR</p>
+            <a href="" class="btn btn-block btn-danger my-2" g-login>
+                <span class="fa fa-google"></span> Continue with Google
+            </a>
+            <p class="text-center strong">OR</p>
+            <div class="form-group">
+                <div>
+                    <input type="text" class="form-control" name="fullname" placeholder="Full name" autocomplete="name" [ngClass]="{'is-invalid':errs['fullname']}" [(ngModel)]="regUser.fullname">
+                    <span class="invalid-feedback" role="alert" *ngIf="errs['fullname']">{{errs['fullname'][0]}}</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    <input type="email" class="form-control" name="email" placeholder="Email" autocomplete="email" [ngClass]="{'is-invalid':errs['email']}" [(ngModel)]="regUser.email">
+                    <span class="invalid-feedback" role="alert" *ngIf="errs['email']">{{errs['email'][0]}}</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    <input type="tel" class="form-control" name="phone" placeholder="Phone Number" autocomplete="tel" [ngClass]="{'is-invalid':errs['phone']}" [(ngModel)]="regUser.phone">
+                    <span class="invalid-feedback" role="alert" *ngIf="errs['phone']">{{errs['phone'][0]}}</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    <input type="text" class="form-control" name="username" autocomplete="username" [ngClass]="{'is-invalid':errs['username']}" placeholder="Username" [(ngModel)]="regUser.username">
+                    <span class="invalid-feedback" role="alert" *ngIf="errs['username']">{{errs['username'][0]}}</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Gender:</label>
+                <div>
+                    <label><input type="radio" name="gender" [(ngModel)]="regUser.gender" value="male">Male</label>
+                    <label><input type="radio" name="gender" [(ngModel)]="regUser.gender" value="female">Female</label>
+
+                </div>
+                <span class="text-danger" *ngIf="errs['gender']">{{errs['gender'][0]}}</span>
+            </div>
+            <div class="form-group">
+                <div>
+                    <input type="password" class="form-control" name="pass" autocomplete="new-password" [ngClass]="{'is-invalid':errs['password']}" placeholder="Password" [(ngModel)]="regUser.password">
+                    <span class="invalid-feedback" role="alert" *ngIf="errs['password']">{{errs['password'][0]}}</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    <input type="password" class="form-control" name="pass1" autocomplete="new-password" placeholder="Repeat Password" [(ngModel)]="regUser.password_confirmation">
+                    <span class="invalid-feedback" role="alert" *ngIf="errs['password_confirmation']">{{errs['password_confirmation'][0]}}</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    <p class="help-block">Before you register, you agree that you have read and accept to follow the <a [routerLink]="'/terms-and-conditions'">Terms and Conditions</a> that govern this website and satisfied by our <a [routerLink]="'/privacy'">Privacy Policy</a>                        </p>
+                    <label><input type="checkbox" class="" name="terms" ng-true-value="1" ng-false-value="0"
+              [(ngModel)]="regUser.terms"> I Accept</label>
+
+                </div>
+            </div>
+
+            <div class="form-group clearfix">
+                <div>
+                    <input type="submit" [disabled]="isSubmiting||regUser.terms===false" class="btn btn-sm btn-primary float-right" name="submit" value="Register">
+                </div>
+            </div>
+            <div class="text-center mt-2">
+                <p>Already here? <a [routerLink]="'/login'" class="btn btn-sm btn-outline-success">Login</a></p>
+            </div>
+
+        </form>
+    </div>
+</div>

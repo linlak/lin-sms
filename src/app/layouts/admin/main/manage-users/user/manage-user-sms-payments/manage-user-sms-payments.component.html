@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-12">
+        <div class="list-group" [hidden]="!user.payments?.length">
+            <div class="list-group-item mt-2" *ngFor="let payment of user.payments">
+                <p>
+                    <b>Ref:</b>&nbsp;{{payment.p_ref}}&nbsp;
+                    <b>SMS:</b>&nbsp;{{payment.sms_count}}&nbsp;
+                    <b>Me2U:</b>&nbsp;{{payment.is_m2u}}&nbsp;
+                    <b>SMS Received:</b>&nbsp;{{payment.me2u_count}}&nbsp;
+                    <b>Total SMS:</b>&nbsp;{{payment.total_sms}}&nbsp;
+                    <b>Remaining SMS:</b>&nbsp;{{payment.remaining}}&nbsp;
+                    <b>Initiated:</b>&nbsp;{{payment.start_date}}&nbsp;
+                    <b>Amount:</b>&nbsp;{{payment.sms_price|customCurrency:'/=':false}}&nbsp;
+                    <b>Status:</b>&nbsp;
+                    <span class="text-warning" *ngIf="payment.status===0">Pending</span>
+                    <span class="text-success" *ngIf="payment.status===1">Verified</span>
+                    <span class="text-danger" *ngIf="payment.status===2">Suspended</span>
+                    <!-- <span class="text-warning">Pending</span> -->
+                    <!-- <span class="text-warning">Pending</span> -->
+                </p>
+            </div>
+        </div>
+        <div class="text-center my-3 mt-sm-5" *ngIf="!user.payments?.length">
+            <strong>
+        No payment records for {{user.full_name}}
+      </strong>
+        </div>
+    </div>
+</div>

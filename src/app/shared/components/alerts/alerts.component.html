@@ -1,0 +1,9 @@
+<div class="row">
+    <div class="col-12 " id="Errsdiv">
+        <p *ngFor="let alert of alerts">
+            <ngb-alert [type]="alert.type" [dismissible]="false" (close)="remove(alert)">
+                {{ alert.msg }}
+            </ngb-alert>
+        </p>
+    </div>
+</div>

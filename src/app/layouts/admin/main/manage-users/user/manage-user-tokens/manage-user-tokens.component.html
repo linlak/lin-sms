@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-12">
+        <ng-container *ngIf="user.tokens?.length; else noTokens">
+            <div class="list-group">
+                <div class="list-group-item mt-2" *ngFor="let token of user.tokens">
+                    <p>
+                        <b>Provider:</b>&nbsp;{{token.provider}}&nbsp;
+                        <b>Created:</b>&nbsp;{{token.created_at}}&nbsp;
+                        <b>Last Seen:</b>&nbsp;{{token.last_seen}}
+                    </p>
+                </div>
+            </div>
+        </ng-container>
+        <ng-template #noTokens>
+            <div class="text-center mt-3 mt-sm-5">
+                <strong>
+        No Token records for {{user.full_name}}
+      </strong>
+            </div>
+        </ng-template>
+    </div>
+</div>

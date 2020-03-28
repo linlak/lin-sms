@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-12">
+        <ng-container *ngIf="user.domains?.length; else noDomains">
+            <div class="list-group">
+                <div class="list-group-item mt-2" *ngFor="let dmn of user.domains">
+                    <p>
+                        <b>Scheme:</b> &nbsp;{{dmn.host_scheme}}&nbsp;
+                        <b>Host Name:</b> &nbsp;{{dmn.host_name}}&nbsp;
+                        <b>App:</b> &nbsp;{{dmn.app?.app_name||'None'}}&nbsp;
+                        <b>Status:</b> &nbsp;
+                        <span class="text-warning" *ngIf="!dmn.status">Pending</span>
+                        <span class="text-success" *ngIf="dmn.status">Verified</span> &nbsp;
+                        <b>Created:</b> &nbsp;{{dmn.created_at}}&nbsp;
+                        <b>Updated:</b> &nbsp;{{dmn.updated_at}}&nbsp;
+                    </p>
+                </div>
+            </div>
+        </ng-container>
+        <ng-template #noDomains>
+            <div class="text-center mt-2 mt-sm-5">
+                <strong>
+                  No Domains for {{user.full_name}}
+                </strong>
+            </div>
+        </ng-template>
+    </div>
+</div>

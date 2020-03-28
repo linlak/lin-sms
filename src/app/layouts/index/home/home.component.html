@@ -1,0 +1,28 @@
+<div class="row justify-content-center">
+    <div class="col-11">
+        <div class="row">
+            <div class="col-12 col-sm-8 order-sm-last">
+                <h3 class="text-center mb-2">
+                    {{'pages.home.welocome' | translate:{'company': 'company.name' | translate} }} &nbsp;<span share-me share-title="Welcome to LinSMS" share-link="https://lin-sms.com" share-message="Visit our website to find out what we offer at LinSMS."></span></h3>
+                <p>{{'pages.home.intro' | translate:{'company': 'company.name' | translate} }}
+                    <br> {{'pages.home.intro1' | translate:{'company': 'company.name' | translate} }}
+                    <br> {{'pages.home.intro2' | translate}}
+                </p>
+                <ul>
+                    <li *ngFor="let item of services">{{item | translate}}</li>
+                </ul>
+                <p>
+                    <span *ngIf="!isUser">
+            {{'general.simply' | translate}} <a [routerLink]="'/login'">{{'nav.login' | translate}}</a>
+            {{'general.or' | translate}} <a [routerLink]="'/register'">{{'nav.register' | translate}}</a>
+            {{'pages.home.action.a' | translate}} <a [routerLink]="'/about'">{{'company.name' | translate}}</a>
+          </span>
+                    <br><br> {{'pages.home.guarantee' | translate:{'company': 'company.name' | translate} }}
+                </p>
+            </div>
+            <div class="col-12 col-sm-4 order-sm-first">
+                <app-sms-coverage></app-sms-coverage>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<p class="help-block">
+    Remember to send the <strong>Voucher Code</strong> to the recipient before they can use it.</p>
+<form class="form mx-auto" autocomplete="off" (submit)="sendSms()">
+    <div class="form-group">
+        <label class="control-label">Friend's ID:</label>
+        <div>
+            <input type="text" class="form-control" ng-model="user.name" name="name" placeholder="Enter Username, Email or Phone" [ngClass]="{'is-invalid':errs.name}">
+            <span class="invalid-feedback" role="alert" *ngIf="errs.name">{{errs.name[0]}}</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Number of SMS:</label>
+        <div>
+            <input type="text" ng-model="user.sms" class="form-control" name="amount" placeholder="Enter SMS to Share" [ngClass]="{'is-invalid':errs.sms}">
+            <span class="invalid-feedback" role="alert" *ngIf="errs.sms">{{errs.sms[0]}}</span>
+        </div>
+    </div>
+    <div class="form-group clearfix">
+        <div>
+            <input type="submit" [disabled]="isSubmiting" name="submit" value="Share" class="btn btn-sm btn-success">
+        </div>
+    </div>
+</form>

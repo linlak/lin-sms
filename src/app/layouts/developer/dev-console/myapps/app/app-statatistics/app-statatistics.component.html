@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-12">
+                <div *ngFor="let stat of myapp.stats" class="alert alert-{{stat.status}}">
+                    <button class="btn btn-sm btn-danger float-right" (click)="delItem(stat.id)">X</button>
+                    <!-- <span ng-bind-html="stat.message"></span> -->
+                </div>
+            </div>
+        </div>
+        <p class="py-3 text-center strong" *ngIf="!myapp.stats?.length">
+            No records to display!!
+        </p>
+    </div>
+</div>

@@ -1,0 +1,150 @@
+<div class="row">
+    <div class="col-12 bg-success text-white">
+        <span class="position-absolute small admn mt-2" (click)="openAdmin()" *ngIf="isUser&&!isAdmin">
+      <span class="fa fa-lock"></span>
+        </span>
+        <div class="clearfix text-right px-1 pt-sm-2" *ngIf="isUser">
+            <p class="text-capitalize">
+                {{'general.greeting' | translate:{'name': me.name} }} <br /> {{'general.bal' | translate}}: {{ me.has_sms ? me.sms_count + " sms" : "N/A" }} <br>
+                <span id="notofybtn" class="mt-1" (click)="toggleNotify()">
+          <span class="fa fa-bell"></span>
+                <!-- <span class="badge" ng-class="me.unread_notifications()?'badge-danger':'badge-dark'">
+            {{me.unread_notifications()}}
+          </span> -->
+                </span>
+            </p>
+
+        </div>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-success mx-0">
+            <a [routerLink]="'.'" class="navbar-brand mr-auto">
+                <img src="/images/lin.png" class="img" height="40" width="100" alt="linsms">
+            </a>
+            <div class="nav-item d-block d-sm-none mx-0" ngbDropdown>
+                <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarTrans" role="button">
+                    <span class="fas fa-globe"></span>
+                </a>
+                <div ngbDropdownMenu aria-labelledby="navbarTrans" class="dropdown-menu">
+                    <a ngbDropdownItem style="cursor: pointer" *ngFor="let translation of translations" (click)="setTranslation(translation.value)">{{translation.title}}</a>
+
+                </div>
+            </div>
+            <button class="navbar-toggler m-0 px-1" (click)="toggleCollapse()">
+        <span class="sr-only">{{'nav.toggle' | translate}}</span>
+        &#9776;
+      </button>
+
+            <div class="collapse navbar-collapse" id="myNav" [ngbCollapse]="!isNavCollapsed">
+                <ul class="navbar-nav mr-auto">
+                    <li *ngIf="!isUser||!auth.hasSMS()" class="nav-item">
+                        <a class="nav-link" [routerLink]="'/'">{{'nav.home' | translate}}</a>
+                    </li>
+                    <li class="nav-item" ngbDropdown *ngIf="isUser&&auth.hasSMS()">
+                        <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarSms" role="button">
+                            {{'nav.sms' | translate}}
+                        </a>
+                        <div ngbDropdownMenu aria-labelledby="navbarSms" class="dropdown-menu">
+                            <a ngbDropdownItem [routerLink]="'sms'">{{'nav.send_sms' | translate}}</a>
+                            <a ngbDropdownItem [routerLink]="'sms/sent'">{{'nav.sent_sms' | translate}}</a>
+                            <a ngbDropdownItem [routerLink]="'sms/pending'">{{'nav.pending_sms' | translate}}</a>
+                        </div>
+                    </li>
+
+                </ul>
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item" ngbDropdown>
+                        <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarEvents" role="button">
+                            {{'nav.events' | translate}}
+                        </a>
+                        <div ngbDropdownMenu aria-labelledby="navbarEvents" class="dropdown-menu">
+                            <a ngbDropdownItem [routerLink]="'/administration/events'" *ngIf="isAdmin">Manage</a>
+                            <a ngbDropdownItem [routerLink]="'/events/upcoming'">{{'nav.upcoming' | translate}}</a>
+                            <a ngbDropdownItem [routerLink]="'/events'">{{'nav.all' | translate}}</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item" ngbDropdown>
+                        <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarJobs" role="button">
+                            {{'nav.jobs' | translate}}
+                        </a>
+                        <div ngbDropdownMenu aria-labelledby="navbarJobs" class="dropdown-menu">
+                            <a ngbDropdownItem [routerLink]="'/administration/jobs'" *ngIf="isAdmin">{{'nav.manage' | translate}}</a>
+                            <a ngbDropdownItem [routerLink]="'/jobs/recent'">{{'nav.recent' | translate}}</a>
+                            <a ngbDropdownItem [routerLink]="'/jobs'">{{'nav.all' | translate}}</a>
+                        </div>
+                    </li>
+                    <li class="nav-item" ngbDropdown>
+                        <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarNews" role="button">
+                            {{'nav.news' | translate}}
+                        </a>
+                        <div ngbDropdownMenu aria-labelledby="navbarNew" class="dropdown-menu">
+                            <a ngbDropdownItem [routerLink]="'/administration/news'" *ngIf="isAdmin">{{'nav.manage' | translate}}</a>
+                            <a ngbDropdownItem [routerLink]="'/news/recent'">{{'nav.recent' | translate}}</a>
+                            <a ngbDropdownItem [routerLink]="'/news'">{{'nav.all' | translate}}</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item" ngbDropdown>
+                        <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDev" role="button">
+                            {{'nav.developers' | translate}}
+                        </a>
+                        <div ngbDropdownMenu aria-labelledby="navbarDev" class="dropdown-menu">
+                            <a ngbDropdownItem [routerLink]="'/administration/tutorials'" *ngIf="isAdmin">Manage</a>
+                            <a ngbDropdownItem [routerLink]="'developer/tutorials'">{{'nav.tutorials' | translate}}</a>
+                            <a ngbDropdownItem [routerLink]="'developer/console'" *ngIf="isUser">{{'nav.console' | translate}}</a>
+                        </div>
+                    </li>
+                    <li class="nav-item" ngbDropdown>
+                        <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarBlog" role="button">
+                            {{'nav.blog' | translate}}
+                        </a>
+                        <div ngbDropdownMenu aria-labelledby="navbarBlog" class="dropdown-menu">
+                            <a ngbDropdownItem [routerLink]="'/administration/blog'" *ngIf="isAdmin">Manage</a>
+                            <a ngbDropdownItem [routerLink]="'/blog/recent'">{{'nav.recent' | translate}}</a>
+                            <a ngbDropdownItem [routerLink]="'/blog'">{{'nav.all' | translate}}</a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav navbar-right">
+                    <li class="nav-item d-none d-sm-block" ngbDropdown>
+                        <a class="nav-link" style="cursor: pointer" [placement]="'left'" ngbTooltip="Change laguage" ngbDropdownToggle id="navbarTrans" role="button">
+                            <span class="fas fa-globe"></span>
+                        </a>
+                        <div ngbDropdownMenu aria-labelledby="navbarTrans" class="dropdown-menu">
+                            <a ngbDropdownItem style="cursor: pointer" *ngFor="let translation of translations" (click)="setTranslation(translation.value)">{{translation.title}}</a>
+
+                        </div>
+                    </li>
+                    <li class="nav-item" ngbDropdown *ngIf="isUser">
+                        <a class="nav-link" style="cursor: pointer" ngbDropdownToggle id="navbarDash" role="button">
+                            {{'nav.dashboard' | translate}}
+                        </a>
+                        <div ngbDropdownMenu aria-labelledby="navbarDash" class="dropdown-menu">
+                            <a ngbDropdownItem [routerLink]="'/account'">{{'nav.myaccount' | translate}}</a>
+                            <a ngbDropdownItem [routerLink]="'sms/buy'">{{'nav.initpay' | translate}}</a>
+                            <a ngbDropdownItem [routerLink]="'sms/pay'">{{'nav.mypayments' | translate}}</a>
+                            <a ngbDropdownItem [routerLink]="'sms/me2u'">{{'nav.me2u' | translate}}</a>
+                            <a ngbDropdownItem [routerLink]="'phonebook'">{{'nav.phonebook' | translate}}</a>
+                            <a ngbDropdownItem [routerLink]="'administration'" *ngIf="isAdmin">{{'nav.manage' | translate}}</a>
+
+                        </div>
+                    </li>
+
+                    <li *ngIf="!isUser" class="nav-item">
+                        <a class="nav-link" [routerLink]="'register'">{{'nav.register' | translate}}</a>
+                    </li>
+                    <li *ngIf="!isUser" class="nav-item">
+                        <a class="nav-link" [routerLink]="'login'">{{'nav.login' | translate}}</a>
+                    </li>
+                    <li *ngIf="isUser" class="nav-item">
+                        <a class="nav-link" style="cursor: pointer" (click)="logout()">{{'nav.logout' | translate}}</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- <input type="checkbox" name="notfyToggler" ng-model="notfyToggler" id="notfyToggler">
+    <div id="notifications" class="bg-success">
+      {{notifications|json}}
+    </div> -->
+    </div>
+</div>

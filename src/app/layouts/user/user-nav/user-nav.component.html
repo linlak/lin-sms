@@ -1,0 +1,30 @@
+<input type="checkbox" class="d-none" [(ngModel)]="showUserSide" id="adminnavtoggler">
+<span id="adminnavtogglerlabel" class="bg-warning d-sm-none" (click)="toggleUserSide()">
+  <span [ngClass]="showUserSide?'fa-angle-left':'fa fa-angle-right'"></span>
+</span>
+<div class="navbar-nav navbar-dark bg-secondary adminnav">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a [routerLink]="[ './' ]" class="nav-link">My Account</a>
+        </li>
+        <li class="nav-item">
+            <a [routerLink]="[ './edit-profile' ]" class="nav-link">Edit Profile</a>
+        </li>
+        <li class="nav-item">
+            <a [routerLink]="[ './edit-username' ]" class="nav-link">Edit Username</a>
+        </li>
+        <li class="nav-item">
+            <a [routerLink]="[ './edit-email' ]" class="nav-link">Edit Email</a>
+        </li>
+        <li class="nav-item">
+            <a [routerLink]="[ './add-phone' ]" class="nav-link">Add Phone</a>
+        </li>
+        <li class="nav-item">
+            <a [routerLink]="[ './edit-phone' ]" class="nav-link">Edit Phone</a>
+        </li>
+        <li class="nav-item">
+            <a [routerLink]="[ './reset-password' ]" class="nav-link">Reset Password</a>
+        </li>
+
+    </ul>
+</div>

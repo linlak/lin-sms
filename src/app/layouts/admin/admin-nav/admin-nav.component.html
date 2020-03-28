@@ -1,0 +1,27 @@
+<h3 class="text-center d-none d-sm-block">Manage Fields</h3>
+<input type="checkbox" class="d-none" [(ngModel)]="showAdminSide" id="adminnavtoggler">
+<span id="adminnavtogglerlabel" class="bg-warning d-sm-none" (click)="toggleadminSide()">
+  <span  [ngClass]="showAdminSide?'fa-angle-left':'fa fa-angle-right'"></span>
+</span>
+<div class="navbar-nav navbar-dark adminnav">
+    <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" [routerLink]="'./'">Administration</a></li>
+        <li class="nav-item" *ngIf="isSuper"><a class="nav-link" [routerLink]="'./users'">User
+        Accounts</a></li>
+        <li class="nav-item"><a class="nav-link" [routerLink]="'./sms/payments'" *ngIf="isSuper">SMS
+        Payments</a></li>
+        <li class="nav-item"><a class="nav-link" [routerLink]="'./sms/me2u'" *ngIf="isSuper">SMS
+        Me2U</a></li>
+        <li class="nav-item"><a class="nav-link" [routerLink]="'./sms'">Sms Sent</a>
+        </li>
+        <li class="navitem"><a [routerLink]="'./pusher'" class="nav-link">Pusher Apps</a></li>
+        <!-- <li class="nav-item" ><a class="nav-link" [routerLink]="a_views.all">User Views</a></li>-->
+        <li class="nav-item"><a class="nav-link" [routerLink]="'./quotes'">Quotes</a></li>
+        <li class="navitem"><a [routerLink]="'./blog/categories'" class="nav-link">Blog Categories</a></li>
+        <li class="navitem"><a [routerLink]="'./news'" class="nav-link">News</a></li>
+        <li class="navitem"><a [routerLink]="'./blog'" class="nav-link">Blog</a></li>
+        <li class="navitem"><a [routerLink]="'./developers'" class="nav-link">Developers</a></li>
+        <li class="navitem"><a [routerLink]="'./tutorials'" class="nav-link">Tutorials</a>
+        </li>
+    </ul>
+</div>

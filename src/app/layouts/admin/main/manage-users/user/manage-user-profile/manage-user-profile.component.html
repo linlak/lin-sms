@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-sm-6">
+        <h3 class="text-center my-2">User Details</h3>
+        <p><b>Name:</b>&nbsp;{{user.full_name}}</p>
+        <p><b>Gender:</b>&nbsp;{{user.gender}}</p>
+        <p><b>Email:</b>&nbsp; {{user.email}}</p>
+        <p><b>Username:</b>&nbsp; {{user.username}}</p>
+        <p><b>Phone:</b>&nbsp; {{user.phone}}</p>
+        <p><b>Country:</b>&nbsp; {{user.country}}</p>
+        <p><b>Status:</b>&nbsp;
+            <span class="text-success" *ngIf="user.status=='1'">Verified</span>
+            <span class="text-warning" *ngIf="user.status=='0'">Pending</span>
+            <span class="invalid-feedback" role="alert" *ngIf="user.status=='2'">Suspended</span>
+        </p>
+        <p><b>Registered:</b>&nbsp; {{user.reg_date}}</p>
+        <p><b>Member For:</b>&nbsp; {{user.mbr}}</p>
+        <p><b>Last Seen:</b>&nbsp; {{user.last_seen}}</p>
+    </div>
+    <div class="col-sm-6">
+        <h3 class="text-center my-2">Actions</h3>
+        <div *ngIf="user.id!==aUser.id">
+            <div *ngIf="user.status==='0'">
+                <button class="btn btn-block btn-primary" (click)="notify()">Resend
+        </button>
+                <button class="btn btn-block btn-danger" (click)="romove()">Delete</button>
+            </div>
+            <div *ngIf="user.status==='1'">
+                <button class="btn btn-block btn-warning" (click)="suspendUser()">Suspend</button>
+            </div>
+            <div *ngIf="user.status==='2'">
+                <button class="btn btn-block btn-success" (click)="enUser()">Enable
+        </button>
+                <button class="btn btn-block btn-danger" (click)="romove()">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

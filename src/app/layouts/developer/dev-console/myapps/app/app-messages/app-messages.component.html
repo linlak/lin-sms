@@ -1,0 +1,19 @@
+<div>
+    <div class="card-text p-2 mt-2">
+        <h3 class="text-center card-heading">{{myapp.app_name}}</h3>
+        <h5 class="text-center my-3">
+            Sent SMS
+        </h5>
+    </div>
+    <div class="card-row">
+        <div class="list-group">
+            <div class="list-group-item hovable bg-info" *ngFor="let sms of myapp.sms">
+                <b>Sender Id</b>&nbsp;{{sms.sender_id}}&nbsp;
+                <b>SMS Used</b>&nbsp;{{sms.sent_sms}}&nbsp;
+                <b>SMS Sent</b>&nbsp;{{sms.sent_sms}}&nbsp;
+                <b>SMS Failed</b>&nbsp;{{sms.failed_sms}}&nbsp;
+                <b>SMS Length</b>&nbsp;{{sms.sms_len}}
+            </div>
+        </div>
+    </div>
+</div>

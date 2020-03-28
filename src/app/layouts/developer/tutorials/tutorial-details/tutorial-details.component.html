@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-12">
+        <h3>{{tutorial.title}}</h3>
+        <p><b>Created By:</b> {{tutorial.author.name}}</p>
+        <p>
+            <small>
+            <b>Created:</b> {{tutorial.created_at}}&nbsp;
+            <b>Modified:</b> {{tutorial.updated_at}}&nbsp;
+            <b>Comments:</b> {{tutorial.comments_count}}&nbsp;
+            <b>Likes:</b> {{tutorial.likes_count}}&nbsp;
+          </small>
+        </p>
+        <div>
+            <quill-view-html [content]="tutorial.body" theme="snow"></quill-view-html>
+        </div>
+    </div>
+</div>

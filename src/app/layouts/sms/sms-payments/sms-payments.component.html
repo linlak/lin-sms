@@ -1,0 +1,131 @@
+<div class="row">
+    <div class="col-12">
+        <h3 class="text-center my-3">My Payments</h3>
+        <div class="list-group">
+
+            <div class="list-group-item my-1 rounded shadow-sm " *ngFor="let pay of payments; let i=index">
+                <ng-container *ngIf="showTemp(pay, i); else payDetail">
+                    <p (click)="showPay(pay, i)" style="cursor: pointer;">
+                        <b>Ref:</b>&nbsp; {{pay.p_ref}}&nbsp;
+                        <b>SMS:</b>&nbsp; {{pay.sms_count}}&nbsp;
+                        <b>Me2U:</b>&nbsp; {{pay.is_m2u}}&nbsp;
+                        <b>SMS Received:</b>&nbsp; {{pay.me2u_count}}&nbsp;
+                        <b>Total SMS:</b>&nbsp; {{pay.total}}&nbsp;
+                        <b>Remaining SMS:</b>&nbsp; {{pay.remaining}}&nbsp;
+                        <b>Intitiated:</b>&nbsp; {{pay.start_date}}&nbsp;
+                        <b>Amount:</b>&nbsp; {{pay.sms_price|customCurrency:'/=':false}}&nbsp;
+                        <b>Status:</b>&nbsp;
+                        <span [ngSwitch]="pay.status">
+                        <span *ngSwitchCase="1">
+                        <span class="text-success">Verified</span>
+                        </span>
+                        <span *ngSwitchCase="2">
+                        <span class="text-danger">Blocked</span>
+                        </span>
+                        <span *ngSwitchCase="0">
+                          <span class="text-warning">Pending</span>
+                        </span>
+                        <span *ngSwitchDefault>
+                        N/A
+                        </span>
+                        </span>
+
+
+                        &nbsp;
+                        <strong class="text-dark">View more..</strong>
+                    </p>
+                </ng-container>
+                <ng-template #payDetail>
+                    <div>
+                        <button class="btn btn-sm btn-danger float-left" (click)="cancelDet()">X</button>
+                        <h3 class="text-center">Payment Details</h3>
+                        <div class="row mt-3">
+                            <div class="col-12 px-2 col-sm-6 px-sm-0">
+                                <p>
+                                    <b>Ref:</b>&nbsp; {{curPay.p_ref}}&nbsp;<br>
+                                    <b>SMS:</b>&nbsp; {{curPay.sms_count}}&nbsp;<br>
+                                    <b>Me2U:</b>&nbsp; {{curPay.is_m2u}}&nbsp;<br>
+                                    <b>SMS Received:</b>&nbsp; {{curPay.me2u_count}}&nbsp;<br>
+                                    <b>Total SMS:</b>&nbsp; {{curPay.total}}&nbsp;<br>
+                                    <b>Remaining SMS:</b>&nbsp; {{curPay.remaining}}&nbsp;<br>
+                                    <b>Intitiated:</b>&nbsp; {{curPay.start_date}}&nbsp;<br>
+                                    <b>Amount:</b>&nbsp; {{curPay.sms_price|customCurrency:'/=':false}}&nbsp;<br>
+                                    <b>Status:</b>&nbsp;
+                                    <span [ngSwitch]="curPay.status">
+                                      <span *ngSwitchCase="1" class="text-success">Verified</span>
+                                    <span *ngSwitchCase="0" class="text-warning">Pending</span>
+                                    <span *ngSwitchCase="2" class="text-danger">Blocked</span>
+                                    <span *ngSwitchDefault>N/A</span>
+                                    </span>
+
+                                    &nbsp;
+                                </p>
+                            </div>
+                            <div class="col-12 px-3 col-sm-6">
+
+                                <ng-container *ngIf="curPay.status === 1; else payForm">
+                                    <p>
+                                        <b>Verified:</b>&nbsp; {{curPay.verify}}&nbsp;<br>
+                                        <b>Verified By:</b>&nbsp; {{curPay.verify_by}}&nbsp;<br>
+
+                                        <b>Pay't Method:</b>&nbsp; {{curPay.ntwk}}&nbsp;<br>
+                                        <b>Phone:</b>&nbsp; {{curPay.phone}}&nbsp;<br>
+                                        <b>Trans ID:</b>&nbsp; {{curPay.trans_id}}<br>
+
+                                        <span *ngIf="curPay.b_fwd">
+                                              <b>Brought Forward:</b>&nbsp; {{curPay.b_fwd}}&nbsp;<br>
+                                              <b>From:</b>&nbsp; <button class="btn btn-sm btn-default"
+                                                ng-click="showPayCB(curPay.b_frm)">{{curPay.b_frm_ref}}</button>&nbsp;<br>
+                                            </span>
+                                        <span *ngIf="curPay.c_fwd">
+                                              <b>Carried Forward:</b>&nbsp; {{curPay.c_fwd}}&nbsp;<br>
+                                              <b>To:</b>&nbsp; <button class="btn btn-sm btn-default"
+                                                ng-click="showPayCB(curPay.c_to)">{{curPay.c_to_ref}}</button>&nbsp;<br>
+                                              <b>Date:</b>&nbsp; {{curPay.c_date}}&nbsp;<br>
+                                            </span>
+                                        <b>Used SMS:</b>&nbsp; {{curPay.used}}&nbsp;<br>
+                                        <b>Shared SMS:</b>&nbsp; {{curPay.shared_sms}}&nbsp;<br>
+                                        <b>Remaining:</b>&nbsp; {{curPay.remaining}} &nbsp;
+                                    </p>
+                                </ng-container>
+                                <ng-template #payForm>
+                                    <div *ngIf="curPay.status===0">
+                                        <h4 class="text-center">Pay Now</h4>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row my-2">
+                                                    <div class="col-12">
+                                                        Your account will be charged {{curPay.sms_price|customCurrency:'/=':false}} plus 3% (percent) provider charges.
+                                                        <br> You will therefore pay <strong class="bg-warning p-2">
+                                              {{(walletpay||0)|customCurrency:'/=':false}}</strong>
+                                                    </div>
+                                                </div>
+                                                <form class="form" ng-submit="payNow()" novalidate>
+                                                    <div class="form-group" ng-show="false">
+                                                        <select class="form-control">
+                                              <option>Payment Method</option>
+                                            </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="tel" name="phone" class="form-control" [(ngModel)]="pNow.p_phone" [ngClass]="{'is-invalid':errs.p_phone}" placeholder="Number to be Charged">
+                                                        <p class="help-block">The number where the amount will be deducted.</p>
+                                                        <span *ngIf="errs.p_phone" class="text-danger">{{errs.p_phone[0]}}</span>
+                                                    </div>
+                                                    <div>
+                                                        <input type="submit" name="submit" class="btn btn-sm btn-success" value="Pay">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-template>
+
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+
+            </div>
+        </div>
+    </div>
+</div>

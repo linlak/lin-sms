@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-12 col-sm-8 mx-auto">
+        <h3 class="text-center my-3">You can share your SMS Credit with your friend on LinSMS</h3>
+        <!-- [(activeId)]="active" -->
+        <ul ngbNav #nav="ngbNav" class="nav-tabs">
+            <li [ngbNavItem]="1">
+                <a ngbNavLink>Share SMS</a>
+                <ng-template ngbNavContent>
+                    <app-metou-form></app-metou-form>
+                </ng-template>
+            </li>
+            <li [ngbNavItem]="2">
+                <a ngbNavLink>Load SMS Voucher</a>
+                <ng-template ngbNavContent>
+                    <app-metou-code-form></app-metou-code-form>
+                </ng-template>
+            </li>
+            <li [ngbNavItem]="3">
+                <a ngbNavLink>Received SMS</a>
+                <ng-template ngbNavContent>
+                    <app-metou-list></app-metou-list>
+                </ng-template>
+            </li>
+            <li [ngbNavItem]="4">
+                <a ngbNavLink>SMS Shared</a>
+                <ng-template ngbNavContent>
+                    <app-metou-listshared></app-metou-listshared>
+                </ng-template>
+            </li>
+        </ul>
+        <div class="mt-2" [ngbNavOutlet]="nav"></div>
+    </div>
+</div>

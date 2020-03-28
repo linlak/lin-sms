@@ -1,0 +1,133 @@
+{
+	"company": {
+		"name": "LinSMS"
+	},
+	"forms": {
+		"buttons": {
+			"cancel": "キャンセル",
+			"confirm": "確認",
+			"finish": "",
+			"initiate": "開始する",
+			"login": "ログイン",
+			"ok": "OK",
+			"register": "登録",
+			"reset": "リセット",
+			"send": "SEND"
+		},
+		"placeholders": {
+			"auth_user": "ユーザー名、電話またはメール",
+			"email": "メールアドレスを入力してください",
+			"password": "パスワードを入力する",
+			"password_confirm": "パスワードを再度入力してください",
+			"phone": "電話番号を入力してください",
+			"username": "ユーザーネームを入力してください"
+		}
+	},
+	"general": {
+		"bal": "バランス",
+		"coverage": {
+			"detail": "現在、bulksmsサービスはウガンダのネットワークのみに提供されており、対象サービスには以下が含まれます。",
+			"networks": {
+				"africell": "アフリカセル",
+				"airtel": "エアテル",
+				"k2": "K2 Telecom",
+				"mtn": "MTNウガンダ",
+				"smart": "スマートテレコム",
+				"smile": "スマイル",
+				"utl": "ウガンダテレコム",
+				"vodafone": "ボーダフォン"
+			},
+			"title": "SMSのカバレッジ"
+		},
+		"cur_quote": "私たちの主なクライアントはウガンダからです。したがって、価格はこの国の公式通貨で表示されます",
+		"greeting": "こんにちは {{name}}",
+		"or": "または",
+		"simply": "単に"
+	},
+	"nav": {
+		"about": "私たちに関しては",
+		"administrator": "管理者",
+		"all": "すべて",
+		"blog": "ブログ",
+		"console": "コンソール",
+		"contact": "お問い合わせ",
+		"dashboard": "ダッシュボード",
+		"dating": "デート",
+		"developers": "開発者",
+		"events": "イベント",
+		"forgot": "パスワードを忘れました",
+		"home": "ホーム",
+		"initpay": "支払いを開始",
+		"inspire": "ひらめき",
+		"jobs": "仕事",
+		"login": "ログイン",
+		"logout": "ログアウト",
+		"manage": "管理する",
+		"me2u": "Me2U",
+		"myaccount": "マイアカウント",
+		"mypayments": "私の支払い",
+		"news": "新しい",
+		"pay_mtds": "お支払い方法",
+		"pending_sms": "保留中のSMS",
+		"phonebook": "電話帳",
+		"pricing": "価格設定",
+		"privacy": "プライバシー",
+		"quotes": "引用",
+		"recent": "最近",
+		"register": "登録",
+		"send_sms": "SMSを送信",
+		"sent_sms": "送信済みのSMS",
+		"services": "私たちのサービス",
+		"sms": "SMS",
+		"toggle": "ナビゲーションを切り替え",
+		"tutorials": "チュートリアル",
+		"upcoming": "今後の"
+	},
+	"pages": {
+		"about": {
+			"features": {
+				"title": ""
+			},
+			"mission": {
+				"detail": "私たちの主な目的は、ユーザーに使いやすいユーザーインターフェイスと信頼できるサービスを提供することです。",
+				"title": "私たちの使命"
+			},
+			"story": {
+				"title": ""
+			},
+			"vision": {
+				"detail": "{{company}} ビジョンは、ウガンダの主要なバルクSMSプロバイダーになることです",
+				"title": "私たちのビジョン"
+			}
+		},
+		"home": {
+			"action": {
+				"a": "当社が提供するさまざまなサービスと製品をお楽しみください"
+			},
+			"guarantee": " {{company}} では、SMS UIが簡単かつ迅速に受信者を追加するなどの高度な機能を備えていることを保証します。つまり、多数の受信者を含むテキストまたはCSVファイルをアップロードできます。",
+			"intro": "{{company}} を使用すると、クライアントは頻繁に顧客にバルクSMSを送信したり、製品を宣伝したり、オファーやブランドリリースに関する特別な通知を送信したりできます。",
+			"intro1": "ウェブサイトでアカウントにログインまたは登録するだけで、 {{company}} ユーザーアカウントを使用してインターネット対応PCからバルクSMSを直接送信できます。",
+			"intro2": "また、次のようなさまざまな製品とサービスを提供しています。",
+			"welocome": " {{company}}へようこそ"
+		}
+	},
+	"services": {
+		"home": {
+			"business": "ビジネス広告",
+			"carrer": "キャリア開発",
+			"jobs": "求人広告",
+			"skills": "スキル広告",
+			"sms": "バルクSMS"
+		},
+		"sms": {
+			"birthday": "誕生日の招待",
+			"funerals": "葬儀",
+			"gatherings": "マスギャザリング",
+			"introduction": "紹介通知",
+			"meeting": "ミーティング通知",
+			"software": "OnshellおよびOffshellソフトウェア",
+			"special": "特別な季節のご挨拶",
+			"wedding": "結婚式招待状"
+		}
+	}
+}

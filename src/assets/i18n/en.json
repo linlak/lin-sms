@@ -1,0 +1,133 @@
+{
+	"company": {
+		"name": "LinSMS"
+	},
+	"forms": {
+		"buttons": {
+			"cancel": "Cancel",
+			"confirm": "Confirm",
+			"finish": "Finish",
+			"initiate": "Initiate",
+			"login": "Login",
+			"ok": "OK",
+			"register": "Register",
+			"reset": "Reset",
+			"send": "Send"
+		},
+		"placeholders": {
+			"auth_user": "Username, Phone or Email",
+			"email": "Enter Email Address",
+			"password": "Enter Password",
+			"password_confirm": "Repeat Password",
+			"phone": "Enter Phone Number",
+			"username": "Enter Username"
+		}
+	},
+	"general": {
+		"bal": "Balance",
+		"coverage": {
+			"detail": "We currently offer bulksms services to only Ugandan networks and our coverage includes",
+			"networks": {
+				"africell": "Africel",
+				"airtel": "Airtel",
+				"k2": "K2 Telecom",
+				"mtn": "MTN Uganda",
+				"smart": "Smart Telecom",
+				"smile": "Smile",
+				"utl": "Uganda Telecom",
+				"vodafone": "Vodafone"
+			},
+			"title": "Our SMS coverage"
+		},
+		"cur_quote": "Our primary clients are from Uganda, hence our prices are in this country's official currency",
+		"greeting": "Hi {{name}}",
+		"or": "or",
+		"simply": "Simply"
+	},
+	"nav": {
+		"about": "About Us",
+		"administrator": "Administrator",
+		"all": "All",
+		"blog": "Blog",
+		"console": "Console",
+		"contact": "Contact Us",
+		"dashboard": "Dashboard",
+		"dating": "Dating",
+		"developers": "Developers",
+		"events": "Events",
+		"forgot": "I forgot password",
+		"home": "Home",
+		"initpay": "Initiate Payment",
+		"inspire": "Inspiration",
+		"jobs": "Jobs",
+		"login": "Login",
+		"logout": "Logout",
+		"manage": "Manage",
+		"me2u": "Me2U",
+		"myaccount": "My Account",
+		"mypayments": "My Payments",
+		"news": "New",
+		"pay_mtds": "Payment Methods",
+		"pending_sms": "Pending SMS",
+		"phonebook": "Phone Book",
+		"pricing": "Pricing",
+		"privacy": "Privacy",
+		"quotes": "Quotes",
+		"recent": "Recent",
+		"register": "Register",
+		"send_sms": "Send SMS",
+		"sent_sms": "Sent SMS",
+		"services": "Our Services",
+		"sms": "SMS",
+		"toggle": "Toggle navigation",
+		"tutorials": "Tutorials",
+		"upcoming": "Upcoming"
+	},
+	"pages": {
+		"about": {
+			"features": {
+				"title": "What are LinSMS key features?"
+			},
+			"mission": {
+				"detail": "Our primary objective is to provide our users with an easy to use User Interface and reliable services.",
+				"title": "Our Mission"
+			},
+			"story": {
+				"title": "Our Story"
+			},
+			"vision": {
+				"detail": "{{company}} vision is to be the leading bulk sms provider in Uganda",
+				"title": "Our Vision"
+			}
+		},
+		"home": {
+			"action": {
+				"a": "to enjoy a variety of services and products we offer at"
+			},
+			"guarantee": "At {{company}} we guarantee that our SMS UI is easy to use and fast with advanced features such as adding recipients on a fly i.e It enables you to upload Text or CSV files containing numbers of recipients.",
+			"intro": "{{company}} enables our clients to send Bulk SMS to their frequent customer(s), to promote their products, send special notifications about an offer or brand release.",
+			"intro1": "You can send Bulk SMS directly from your internet enabled PC using your {{company}} User Account, by simply Logging into or Registering for an account on our website.",
+			"intro2": "We also offer a range of of products and services such as,",
+			"welocome": "Welcome to {{company}}"
+		}
+	},
+	"services": {
+		"home": {
+			"business": "Business advertising",
+			"carrer": "Career Development",
+			"jobs": "Jobs advertising",
+			"skills": "Skills advertising",
+			"sms": "Bulk SMS"
+		},
+		"sms": {
+			"birthday": "Birthday Invitation",
+			"funerals": "Funerals",
+			"gatherings": "Mass Gatherings",
+			"introduction": "Introduction Notification",
+			"meeting": "Meeting Notification",
+			"software": "Onshell and Offshell software",
+			"special": "Special Seasons Greetings",
+			"wedding": "Wedding Invitation"
+		}
+	}
+}

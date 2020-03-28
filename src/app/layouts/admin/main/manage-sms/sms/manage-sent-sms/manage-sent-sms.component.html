@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-12">
+        <h3 class="text-center">{{ subTitle || 'Manage SMS' }}</h3>
+        <ng-container *ngIf="smsList.length; else noSms">
+            <ul class="list-group">
+                <li *ngFor="let sms of smsList" class="list-group-item bg-info">
+                    <ng-container *ngIf="!showTemp(sms); else smsDetails">
+                        <app-manage-sms-listitem [sms]="sms"></app-manage-sms-listitem>
+                    </ng-container>
+                    <ng-template #smsDetails>
+                        <app-manage-sent-sms-details [sms]="sms"></app-manage-sent-sms-details>
+                    </ng-template>
+
+                </li>
+            </ul>
+        </ng-container>
+        <ng-template #noSms>
+            <div class="col-sm-6 py-3 text-center mx-auto">
+                <strong>No records!</strong>
+            </div>
+        </ng-template>
+
+    </div>
+</div>

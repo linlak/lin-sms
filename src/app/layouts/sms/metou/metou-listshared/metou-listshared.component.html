@@ -1,0 +1,32 @@
+<p class="help-block">
+    Please you must send the <strong>Voucher Code</strong> to the recipient before they can use it.
+</p>
+<div id="ListDiv" [hidden]="!shared.length">
+    <ul>
+        <li class="clearfix" *ngFor="let share of shared">
+            <p>
+                <b>Recipient: </b>{{share.receiver}}&nbsp;
+                <b>SMS: </b>{{share.voucher_count}}&nbsp;
+                <b>Code: </b>{{share.voucher_code}}&nbsp;
+                <b>Sent: </b>{{share.init_date}}&nbsp;
+                <b>Used: </b>
+                <span ng-show="share.is_used==='1'">Yes</span>
+                <span ng-show="share.is_used==='0'">No</span> &nbsp;
+                <b>Date: </b>{{share.date_used||'N/A'}}&nbsp;
+                <b>From: </b>
+                <span ng-show="share.is_used==='1'">
+            {{share.from_ref}}
+          </span>
+                <span ng-show="share.is_used==='0'">N/A</span> &nbsp;&nbsp;&nbsp;
+                <button class="btn btn-sm btn-danger" ng-disabled="share.is_used==='1'" ng-click="removeCode($index,share.id,share.voucher_code)"><span class="fa fa-trash"></span></button>
+            </p>
+        </li>
+    </ul>
+</div>
+<div class="row" [hidden]="shared.length">
+    <div class="col-12 text-center mt-sm-4">
+        <div class="well well-sm">
+            <strong>No records found!!</strong>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="navbar navbar-expand-sm navbar-dark bg-info mx-0 my-2" *ngIf="navLinks.length">
+    <div class="collapse navbar-collapse" id="admheader" [ngbCollapse]="!isNavCollapsed">
+        <ul class="navbar-nav">
+            <span *ngFor="let l of  navLinks">
+        <li class="nav-item" *ngIf="!l.dropNav">
+          <a [routerLink]="l.uri" class="nav-link">{{l.title}}</a>
+        </li>
+        <li class="nav-item" *ngIf="l.dropNav" ngbDropdown>
+          <a style="cursor: pointer;" class="nav-link" ngbDropdownToggle [id]="l.dropId">{{l.title}}</a>
+          <div ngbDropdownMenu [attr.ariaLabelledby]="l.dropId">
+            <a *ngFor="let c of l.dropNav" [routerLink]="c.uri" ngbDropdownItem>{{c.title}}</a>
+          </div>
+        </li>
+      </span>
+
+        </ul>
+    </div>
+    <button class="navbar-toggler m-0 px-1" (click)="toggleCollapse()">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</div>

@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-12">
+        <div class="list-group" [hidden]="!user.apps?.length">
+            <div class="list-group-item mt-2" *ngFor="let web_app of user.apps">
+                <p>
+                    <b>Title:</b>&nbsp;{{web_app.app_name}}&nbsp;
+                    <b>Host:</b>&nbsp;{{web_app.app_host.host_name||'None'}}&nbsp;
+                    <b>Active:</b>&nbsp;{{web_app.is_active}}&nbsp;
+                    <b>Live:</b>&nbsp;{{web_app.is_live}}&nbsp;
+                    <b>Created:</b>&nbsp;{{web_app.created_at}}&nbsp;
+                    <b>Updated:</b>&nbsp;{{web_app.updated_at}}&nbsp;
+                </p>
+            </div>
+        </div>
+        <div class="text-center mt-2 mt-sm-5" *ngIf="!user.apps?.length">
+            <strong>
+        No Web Apps for {{user.full_name}}
+      </strong>
+        </div>
+    </div>
+</div>

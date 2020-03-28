@@ -1,0 +1,17 @@
+<div class="mt-2 p-2 pb-5">
+    <form class="form py-3" (submit)="editApp()">
+        <div class="form-group">
+            <div class="div">
+                <input type="text" name="app_name" class="form-control" [(ngModel)]="myapp.app_name" placeholder="Enter App Name" />
+                <span *ngIf="errs.app_name" class="text-danger">{{errs.app_name[0]}}</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <input id="keyscheck" type="checkbox" name="ref_keys" [(ngModel)]="myapp.ref_keys" class="form-check-control">
+            <label for="keyscheck" class="form-check-label">Edit Client Id and Secret</label>
+        </div>
+        <div class="form-group mb-2">
+            <input type="submit" [disabled]="isSubmiting" value="Save" class="btn btn-lg btn-primary float-right">
+        </div>
+    </form>
+</div>

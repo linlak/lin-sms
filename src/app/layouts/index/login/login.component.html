@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-10 col-sm-6 offset-1 offset-sm-3">
+        <form class="form mt-5 shadow-sm p-3 bg-info rounded" name="login_form" novalidate (submit)="perform_login()">
+            <h3 class="text-center my-3">Login &nbsp;<span share-me share-title="Login" share-link="https://lin-sms.com/login.html" share-message="Login to enjoy the services we offer at LinSMS."></span></h3>
+            <span class="btn btn-block btn-primary my-2" fb-login>
+        <span class="fa fa-facebook-square"></span> Login with Facebook
+            </span>
+            <p class="text-center strong">OR</p>
+            <span class="btn btn-block btn-danger my-2" g-login>
+        <span class="fa fa-google"></span> Login with Google
+            </span>
+            <p class="text-center strong">OR</p>
+            <div class="form-group">
+                <div>
+                    <input type="text" name="username" autocomplete="username" class="form-control" [placeholder]="'forms.placeholders.auth_user'| translate" [ngClass]="{'is-invalid':errs['username']}" [(ngModel)]="authUser.username">
+                    <span class="invalid-feedback" role="alert" *ngIf="errs['username']">{{errs['username'][0]}}</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    <input type="password" name="password" autocomplete="current-password" class="form-control" [ngClass]="{'is-invalid':errs['password']}" [placeholder]="'forms.placeholders.password'| translate" [(ngModel)]="authUser.password">
+                    <span class="invalid-feedback" role="alert" *ngIf="errs['password']">{{errs['password'][0]}}</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    <a [routerLink]="'/forgot-password'" class="card-link text-white-50">{{'nav.forgot' | translate}}</a>
+                </div>
+            </div>
+            <div class="form-group clearfix">
+                <div>
+                    <input type="submit" [disabled]="isSubmiting" name="submit" class="btn btn-sm btn-success float-right" [value]="'forms.buttons.login' | translate">
+                </div>
+            </div>
+            <div class="text-center mt-2">
+                <p>New here? <a [routerLink]="'/register'" class="btn btn-sm btn-outline-primary">{{'nav.register' | translate}}</a></p>
+            </div>
+        </form>
+    </div>
+</div>

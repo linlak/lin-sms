@@ -1,0 +1,78 @@
+<p class=" text-center">
+    <b>You can send <span class="text-danger">{{me.sms_count}}</span></b> SMS. To send more SMS.&nbsp;&nbsp;&nbsp;
+    <a class="btn btn-success btn-sm" style="cursor: pointer;" (click)="buyMore()">Buy More</a>
+</p>
+<!-- {{msg|json}} -->
+<form class="form" autoComplete="off" role="form" novalidate (submit)="sendSms()">
+    <div class="form-group">
+        <label class="control-label">Sender ID:</label>&nbsp;&nbsp;&nbsp;
+        <span id="rems"></span>
+        <div>
+            <input type="text" [ngClass]="{'is-invalid':errs.sender_id}" class="form-control" name="sender_id" id="sender_id" [(ngModel)]="msg.sender_id" placeholder="Sender ID" />
+            <span class="invalid-feedback" *ngIf="errs.sender_id" role="alert" id="sender_idErr">{{errs.sender_id[0]}}</span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Type Recipients:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+        <span>
+      {{msg.recipients|contactsCalculator}}
+    </span>
+        <span ngbDropdown class="float-right">
+      <!-- <span class="btn btn-sm btn-warning" (click)="testResp()" ng-show="msg.recipients.length">Clean</span> -->
+        <span class="btn btn-sm btn-info" ngbDropdownToggle id="sendOptions">Options <span class="caret"></span></span>
+        <div class="dropdown-menu bg-success" role="menu" ngbDropdownMenu aria-labelledby="sendOptions">
+
+            <span ngbDropdownItem style="cursor: pointer;" (click)="openUploader()"><span
+            class="fa fa-file-upload"></span>&nbsp; Upload Recipients</span>
+
+            <span ngbDropdownItem style="cursor: pointer;" (click)="onPhone()"><span class="fa fa-user-plus"></span>&nbsp; Open Phone Book</span>
+            <span ngbDropdownItem style="cursor: pointer;" (click)="onPhone()"><span class="fa fa-user-plus"></span>&nbsp; Open Sent SMS</span>
+
+        </div>
+        </span>
+        <div>
+
+            <textarea type="text" [(ngModel)]="msg.recipients" class="form-control auto-expand-input" [ngClass]="{'is-invalid':errs.recipients}" name="recipients" id="recipients" placeholder="256783198167,256751921465,"></textarea>
+            <p class="help-block">Enter Comma separated Numbers ( e.g: 2567xx xxx xxx,2567xx xxx xxx,)</p>
+            <span class="invalid-feedback" *ngIf="errs.recipients" role="alert" id="recipientsErr">{{errs.recipients[0]}}</span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Message:</label>&nbsp;&nbsp;&nbsp;<span id="msgcnt"></span>
+        <div>
+            <textarea type="text" [(ngModel)]="msg.message" [ngClass]="{'is-invalid':errs.message}" rows="4" class="form-control auto-expand-input" name="message" id="message" placeholder="Message Here............"></textarea>
+            <p class="text-right"><span id="msgremof"></span>&nbsp;&nbsp;&nbsp;
+            </p>
+            <span class="invalid-feedback" *ngIf="errs.message" role="alert" id="messageErr"> {{ errs.message[0] }}</span>
+        </div>
+    </div>
+    <div class="form-group form-check">
+
+        <input type="checkbox" name="shouldQueue" id="defer-send" [(ngModel)]="msg.shouldQueue" class="form-check-input">
+        <label for="defer-send" class="form-check-label">Set message delivery time.</label>
+
+    </div>
+    <div class="form-row" [hidden]="!msg.shouldQueue">
+        <div class="form-group col-sm-6">
+            <label for="hours" class="control-label">Add Hours</label>
+            <div>
+                <input type="number" [(ngModel)]="msg.hours" placeholder="Hours" min="0" max="24" name="hours" id="hours" ng-class="{'is-invalid':errs.hours}" class="form-control" />
+                <span class="invalid-feedback" *ngIf="errs.hours" role="alert">{{errs.hours[0]}}</span>
+            </div>
+        </div>
+        <div class="form-group col-sm-6">
+            <label for="minutes" class="control-label">Add Minutes</label>
+            <div>
+                <input type="number" [(ngModel)]="msg.minutes" name="minutes" id="minutes" placeholder="Minutes" min="0" max="24" [ngClass]="{'is-invalid':errs.minutes}" class="form-control" />
+                <span class="invalid-feedback" *ngIf="errs.minutes" role="alert">{{errs.minutes[0]}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="form-group clearfix">
+        <div>
+            <input type="submit" [disabled]="isSubmiting" class="btn btn-sm btn-success float-right" name="submit" value="Send" />
+        </div>
+    </div>
+</form>

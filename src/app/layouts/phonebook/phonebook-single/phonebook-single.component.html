@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-12 col-sm-10">
+
+        <form class="form" (submit)="savedata()">
+            <h3 class="text-center">{{group.title}}</h3>
+            <p class="text-center">
+                <b>Created: </b>{{group.created}}&nbsp;
+                <b>Updated: </b>{{group.last_updated}}&nbsp;<br>
+                <b>No of Contacts: </b>{{group.contacts|contactsCalculator}}&nbsp;
+            </p>
+            <div class="form-group">
+                <label class="control-label">Type Numbers</label>
+                <span class="float-right">
+
+          <span class="btn btn-sm btn-warning" (click)="emptyResp()" [hidden]="!group.contacts?.length">
+            <span class="fa fa-trash-alt"></span>
+                </span>
+                <span class="btn btn-sm btn-warning" (click)="testResp()" [hidden]="!group.contacts?.length">Clean</span>
+                <span ngbDropdown display="dynamin" placement="bottom-left">
+            <span class="btn btn-sm btn-info" ngbDropdownToggle id="phoneDrop">
+              Options <span class="caret"></span>
+                </span>
+                <ul class="dropdown-menu" role="menu" ngbDropdownMenu aria-labelledby="phoneDrop">
+                    <li class="text-center" ngbDropdownItem>
+                        <span class="btn btn-sm btn-block btn-primary" (click)="openUploader()"><span
+                    class="glyphicon glyphicon-upload"></span> Upload Recipients</span>
+                    </li>
+                </ul>
+                </span>
+
+                </span>
+                <div>
+                    <textarea type="text" name="contacts" class="form-control auto-expand-input" placeholder="Enter Comma seperated phone numbers e.g 256751921465,256783198167" list=", " [(ngModel)]="group.contacts">
+					</textarea>
+                    <p>Please enter comma (,) for best results</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12 clearfix">
+                    <a [routerLink]="'../'" class="btn btn-sm btn-primary">
+                        <span class="fa fa-angle-left"></span> Back to Phonebook</a> <input type="submit" class="btn btn-sm btn-success float-right" [disabled]="isSubmiting" name="submit" value="Save">
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>

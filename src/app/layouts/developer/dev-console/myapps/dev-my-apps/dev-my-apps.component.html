@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-11">
+        <h3 class="text-center my-3">My Apps</h3>
+        <ng-container *ngIf="myapps.length !== 0; else noApps">
+            <ul class="list-unstyled">
+                <li class="list-item" *ngFor="let myapp of myapps">
+                    <div class="row">
+                        <div class="col-12 col-sm-4">
+                            <strong>
+                  {{myapp.app_name|uppercase}}
+                </strong>
+                        </div>
+                        <div class="col-12 col-sm-5">
+                            <p><b>Created: </b>{{myapp.created_at}}</p>
+                            <p><b>Updated: </b>{{myapp.updated_at}}</p>
+                        </div>
+                        <div class="col-12 col-sm-3">
+                            <a class="btn btn-sm btn-info" [routerLink]="['../my-app', myapp.id]">
+                                <span class="fa fa-eye"></span>
+                            </a>
+                            <a class="btn btn-sm btn-warning" [routerLink]="['../my-app', myapp.id, 'messages']">
+                                <span class="fa fa-envelope"></span>
+                            </a>
+                            <a class="btn btn-sm btn-info" [routerLink]="['../my-app', myapp.id, 'edit']">
+                                <span class="fa fa-edit"></span>
+                            </a>
+                            <button class="btn btn-sm btn-danger">
+                                <span class="fa fa-trash"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                </li>
+            </ul>
+        </ng-container>
+        <ng-template #noApps>
+            <div class="text-center mt-3 mt-sm-5">
+                <strong>You have not registered any Apps yet!!</strong>
+                <br>
+                <a [routerLink]="[ '../create-app' ]" class="btn btn-lg btn-success mt-3">Create App</a>
+            </div>
+        </ng-template>
+
+
+    </div>
+</div>
